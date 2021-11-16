@@ -16,6 +16,8 @@ while x < 5:
         y = y + 1
     x = x + 1
 
+# Kommentar
+
 
 '''i = 0
 brightness = 0
