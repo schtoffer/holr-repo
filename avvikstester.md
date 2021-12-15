@@ -16,7 +16,7 @@ Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktis
 | 100       | 92                                    | -8                | -8%           |
 
 ## Stor motor (med hjul montert på)
-| hastighet | laveste observerte faktiske hastighet | numerisk avvik    | %-vis avvik   |
+| Hastighet | Laveste observerte faktiske hastighet | Numerisk avvik    | %-vis avvik   |
 | ---       | ---                                   | ---               | ---           |
 | 10        | 8                                     | -2                | -20%          |
 | 20        | 17                                    | -3                | -15%          |
