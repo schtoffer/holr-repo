@@ -18,7 +18,8 @@ Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktis
 | 100       | 92                                    | -8%       |
 
 ### Koden som er brukt for å gjennomføre denne testen
-´from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+```
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
 from spike.operator import equal_to, greater_than
 from math import *
@@ -41,4 +42,5 @@ while True:
 
     if actualSpeed < lastSpeed:
         print("Vi ber om hastighet på", speed,", men vi får hastighet:", actualSpeed, ". Dette er et avvik på", ((actualSpeed/speed)-1)*100),"%"
-        lastSpeed = actualSpeed´
+        lastSpeed = actualSpeed
+```
