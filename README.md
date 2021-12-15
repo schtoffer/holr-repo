@@ -1,9 +1,44 @@
 # Høvik og Lier Robotics
 Høvik og Lier Robotics er et aktivitetstilbud for barn og unge i alderen 10 - 16 år, bosatt i Lier kommune.
-
+t
 ## Resultat av avvikstest liten motor
-Når vi kjører liten motor på x hastighet, opplever vi noen ganger at hastigheten ikke alltid == x. Det kan være fordi Vi tester ut om vi klarer å få til en flyt der vi kan dra nytte av git og github. Denne repo-en er kun på utforskerstadiet. Du finner nok ikke noe nyttig kode her.
+Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktisk_hastighet != hastighet. Dette kan være som resultat av motstand i mekanikken i motoren, eller strømforsyning. Altså noe med motoren å gjøre. Denne form for avvik må vi noen ganger ta hensyn til i koden vår. Derfor har vi kjørt en test med hastighet på ulike nivå for å si noe om hva du kan forvente deg av avvik.
 
-| Hastighet | Avvik     |
-| ---       | ---       |
-| 20        | -15%      |
+| hastighet | laveste observerte faktiske hastighet | avvik i % |
+| ---       | ---                                   | ---       |
+| 10        | 8                                     | -20%      |
+| 20        | 17                                    | -15%      |
+| 30        | 27                                    | -10%      |
+| 40        | 37                                    | -7,5%     |
+| 50        | 46                                    | -8%       |
+| 60        | 56                                    | -6,7%     |
+| 70        | 66                                    | -5,7%     |
+| 80        | 75                                    | -6,25%    |
+| 90        | 85                                    | -5,6%     |
+| 100       | 92                                    | -8%       |
+
+### Koden som er brukt for å gjennomføre denne testen
+´from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+from spike.operator import equal_to, greater_than
+from math import *
+
+hub = PrimeHub()
+motorFront = Motor('D')
+
+speed = 100
+
+motorFront.start(speed)
+wait_until(motorFront.get_speed, equal_to, speed-2)
+
+actualSpeed = motorFront.get_speed()
+print(actualSpeed)
+
+lastSpeed = speed
+
+while True:
+    actualSpeed = motorFront.get_speed()
+
+    if actualSpeed < lastSpeed:
+        print("Vi ber om hastighet på", speed,", men vi får hastighet:", actualSpeed, ". Dette er et avvik på", ((actualSpeed/speed)-1)*100),"%"
+        lastSpeed = actualSpeed´
