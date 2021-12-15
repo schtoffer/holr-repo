@@ -4,18 +4,18 @@ Høvik og Lier Robotics er et aktivitetstilbud for barn og unge i alderen 10 - 1
 ## Resultat av avvikstest liten motor
 Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktisk_hastighet != hastighet. Dette kan være som resultat av motstand i mekanikken i motoren, eller strømforsyning. Altså noe med motoren å gjøre. Denne form for avvik må vi noen ganger ta hensyn til i koden vår. Derfor har vi kjørt en test med hastighet på ulike nivå for å si noe om hva du kan forvente deg av avvik.
 
-| hastighet | laveste observerte faktiske hastighet | avvik i % |
-| ---       | ---                                   | ---       |
-| 10        | 8                                     | -20%      |
-| 20        | 17                                    | -15%      |
-| 30        | 27                                    | -10%      |
-| 40        | 37                                    | -7,5%     |
-| 50        | 46                                    | -8%       |
-| 60        | 56                                    | -6,7%     |
-| 70        | 66                                    | -5,7%     |
-| 80        | 75                                    | -6,25%    |
-| 90        | 85                                    | -5,6%     |
-| 100       | 92                                    | -8%       |
+| hastighet | laveste observerte faktiske hastighet | numerisk avvik    | %-vis avvik   |
+| ---       | ---                                   | ---               | ---           |
+| 10        | 8                                     | 2                 | -20%          |
+| 20        | 17                                    | 3                 | -15%          |
+| 30        | 27                                    | 3                 | -10%          |
+| 40        | 37                                    | 3                 | -7,5%         |
+| 50        | 46                                    | 4                 | -8%           |
+| 60        | 56                                    | 4                 | -6,7%         |
+| 70        | 66                                    | 4                 | -5,7%         |
+| 80        | 75                                    | 5                 | -6,25%        |
+| 90        | 85                                    | 5                 | -5,6%         |
+| 100       | 92                                    | 8                 | -8%           |
 
 ### Koden som er brukt for å gjennomføre denne testen
 ```
