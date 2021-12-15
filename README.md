@@ -40,9 +40,9 @@ from spike.operator import equal_to, greater_than
 from math import *
 
 hub = PrimeHub()
-motorFront = Motor('D')
+motorFront = Motor('A')
 
-speed = 100
+speed = 40
 
 motorFront.start(speed)
 wait_until(motorFront.get_speed, equal_to, speed-2)
@@ -56,6 +56,8 @@ while True:
     actualSpeed = motorFront.get_speed()
 
     if actualSpeed < lastSpeed:
-        print("Vi ber om hastighet på", speed,", men vi får hastighet:", actualSpeed, ". Dette er et avvik på", ((actualSpeed/speed)-1)*100),"%"
+        prosentvisAvvik = (actualSpeed / speed - 1) * 100
+        numeriskAvvik = speed - actualSpeed
+        print("Vi ber om hastighet på " + str(speed) +", men vi får hastighet: " + str(actualSpeed) + ". Dette er et numerisk avvik på " + str(numeriskAvvik) +", og et %-vis avvik på " + str(prosentvisAvvik))
         lastSpeed = actualSpeed
 ```
