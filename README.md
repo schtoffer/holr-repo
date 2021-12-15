@@ -1,6 +1,6 @@
 # Høvik og Lier Robotics
 Høvik og Lier Robotics er et aktivitetstilbud for barn og unge i alderen 10 - 16 år, bosatt i Lier kommune.
-t
+
 ## Resultat av avvikstest liten motor
 Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktisk_hastighet != hastighet. Dette kan være som resultat av motstand i mekanikken i motoren, eller strømforsyning. Altså noe med motoren å gjøre. Denne form for avvik må vi noen ganger ta hensyn til i koden vår. Derfor har vi kjørt en test med hastighet på ulike nivå for å si noe om hva du kan forvente deg av avvik.
 
