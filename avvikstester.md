@@ -4,13 +4,15 @@ Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktis
 ## Liten motor
 | Hastighet | Laveste observerte hastighet | Numerisk avvik | %-vis avvik |
 |---|---|---|---|
-| 10 | 8 | -2 | -20.0% | 
 | 20 | 17 | -3 | -15.0% | 
 | 30 | 26 | -4 | -13.3333% | 
 | 40 | 37 | -3 | -7.5% | 
 | 50 | 46 | -4 | -8.00002% | 
 | 60 | 56 | -4 | -6.66668% | 
 | 70 | 66 | -4 | -5.7143% | 
+| 80 | 75 | -5 | -6.25% | 
+| 90 | 84 | -6 | -6.66668% | 
+| 100 | 95 | -5 | -5.00002% | 
 
 
 # Test av ny jobb (beta)
