@@ -35,28 +35,68 @@ Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktis
 ```
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
-from spike.operator import equal_to, greater_than
+from spike.operator import equal_to, greater_than, greater_than_or_equal_to
 from math import *
 
+#Objecter
 hub = PrimeHub()
-motorFront = Motor('A')
+motorFront = Motor('D')
+timer = Timer()
+f = open('tabell.txt','w')
+f.write("| Hastighet | Laveste observerte hastighet | Numerisk avvik | %-vis avvik |")
+f.write("\n|---|---|---|---|")
+f.close()
+f = open('tabell.txt','a')
 
-speed = 40
+#f = open('tabell.txt','r')
+#print(f.read())
 
-motorFront.start(speed)
-wait_until(motorFront.get_speed, equal_to, speed-2)
-
-actualSpeed = motorFront.get_speed()
-print(actualSpeed)
-
+#Variabler
+speed = 10
+observationTime = 10
 lastSpeed = speed
+obsSpeed = []
+obsNumericDiff = []
+obsPrecentDiff = []
 
-while True:
+#Program
+
+while speed <= 100:
+
+    motorFront.start(speed)
+    wait_until(motorFront.get_speed, greater_than_or_equal_to, speed-2)
     actualSpeed = motorFront.get_speed()
 
-    if actualSpeed < lastSpeed:
-        prosentvisAvvik = (actualSpeed / speed - 1) * 100
-        numeriskAvvik = speed - actualSpeed
-        print("Vi ber om hastighet på " + str(speed) +", men vi får hastighet: " + str(actualSpeed) + ". Dette er et numerisk avvik på " + str(numeriskAvvik) +", og et %-vis avvik på " + str(prosentvisAvvik))
-        lastSpeed = actualSpeed
+    timer.reset()
+    while timer.now() < observationTime:
+        actualSpeed = motorFront.get_speed()
+
+        if actualSpeed < lastSpeed:
+            
+            prosentvisAvvik = (actualSpeed / speed - 1) * 100
+            #numeriskAvvik = speed - actualSpeed
+            obsSpeed.append(actualSpeed)
+            obsNumericDiff.append(actualSpeed - speed)
+            obsPrecentDiff.append(prosentvisAvvik)
+            lastSpeed = actualSpeed
+
+        '''if timer.now() >= observationTime:
+            # then break out of the while loop
+            break'''
+
+    f.write("\n| " + str(speed) + " | " + str(obsSpeed.pop()) + " | " + str(obsNumericDiff.pop()) + " | " + str(obsPrecentDiff.pop()) + "% | ")
+    speed += 10
+    lastSpeed = speed
+
+motorFront.stop()
+f.close()
+f = open('tabell.txt','r')
+print(f.read())
+
+
+#print("Vi ber om hastighet på " + str(speed) +", men vi får hastighet: " + str(actualSpeed) + ". Dette er et numerisk avvik på " + str(numeriskAvvik) +", og et %-vis avvik på " + str(prosentvisAvvik))
+            
+f.close()
+f = open('tabell.txt','r')
+print(f.read())
 ```
