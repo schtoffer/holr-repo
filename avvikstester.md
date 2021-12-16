@@ -2,7 +2,7 @@
 Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktisk_hastighet != hastighet. Dette kan være som resultat av motstand i mekanikken i motoren, eller strømforsyning. Altså noe med motoren å gjøre. Denne form for avvik må vi noen ganger ta hensyn til i koden vår. Derfor har vi kjørt en test med hastighet på ulike nivå for å si noe om hva du kan forvente deg av avvik.
 
 ## Liten motor
-Testen ble gjennomført med liten motor, der et grått tannhjul var montert direkte på motorakslingen. Det skulle med andre ord være svært lite ytre påvirkning som hindrer motoreren.
+Testen ble gjennomført med liten motor, der et grått tannhjul var montert direkte på motorakslingen. Det skulle med andre ord være svært lite ytre påvirkning som hindrer motoreren. Motoren ble kjørt i 30 sekunder for hver hastighetsintervall. Den laveste observerte faktiske motorhastigheten ble loggført og gjenspegles i tabellen under.
 
 | Hastighet | Laveste observerte hastighet | Numerisk avvik | %-vis avvik |
 |---|---|---|---|
