@@ -2,18 +2,17 @@
 Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktisk_hastighet != hastighet. Dette kan være som resultat av motstand i mekanikken i motoren, eller strømforsyning. Altså noe med motoren å gjøre. Denne form for avvik må vi noen ganger ta hensyn til i koden vår. Derfor har vi kjørt en test med hastighet på ulike nivå for å si noe om hva du kan forvente deg av avvik.
 
 ## Liten motor
-| Hastighet | Laveste observerte faktiske hastighet | Numerisk avvik    | %-vis avvik   |
-| ---       | ---                                   | ---               | ---           |
-| 10        | 8                                     | -2                | -20%          |
-| 20        | 17                                    | -3                | -15%          |
-| 30        | 27                                    | -3                | -10%          |
-| 40        | 37                                    | -3                | -7,5%         |
-| 50        | 46                                    | -4                | -8%           |
-| 60        | 56                                    | -4                | -6,7%         |
-| 70        | 66                                    | -4                | -5,7%         |
-| 80        | 75                                    | -5                | -6,3%        |
-| 90        | 85                                    | -5                | -5,6%         |
-| 100       | 92                                    | -8                | -8%           |
+| Hastighet | Laveste observerte hastighet | Numerisk avvik | %-vis avvik |
+|---|---|---|---|
+| 20 | 18 | -2 | -10.0% |
+| 30 | 27 | -3 | -10.0% |
+| 40 | 37 | -3 | -7.5% |
+| 50 | 47 | -3 | -6.00002% |
+| 60 | 56 | -4 | -6.66668% |
+| 70 | 66 | -4 | -5.7143% |
+| 80 | 76 | -4 | -5.00002% |
+| 90 | 85 | -5 | -5.55556% |
+| 100 | 95 | -5 | -5.00002% | 
 
 ## Stor motor (med hjul montert på)
 | Hastighet | Laveste observerte faktiske hastighet | Numerisk avvik    | %-vis avvik   |
@@ -28,6 +27,9 @@ Når vi kjører liten motor på hastighet = x, opplever vi noen ganger at faktis
 | 80        | 71                                    | -9                | -11,3%        |
 | 90        | 83                                    | -8                | -8,9%         |
 | 100       | 87                                    | -13               | -13%          |
+
+# Test av ny jobb (beta)
+
 
 # Koden som er brukt for å gjennomføre denne testen
 ```
