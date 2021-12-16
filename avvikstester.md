@@ -17,11 +17,7 @@ Testen ble gjennomført med liten motor, der et grått tannhjul var montert dire
 | 90 | 84 | -6 | -6.66668% | 
 | 100 | 95 | -5 | -5.00002% | 
 
-
-# Test av ny jobb (beta)
-
-
-# Koden som er brukt for å gjennomføre denne testen
+# Koden som er brukt for å gjennomføre testen
 ```
 from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor, MotionSensor, Speaker, ColorSensor, App, DistanceSensor, Motor, MotorPair
 from spike.control import wait_for_seconds, wait_until, Timer
