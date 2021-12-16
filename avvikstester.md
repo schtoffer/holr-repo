@@ -44,8 +44,6 @@ obsPrecentDiff = []
 f = open('tabell.txt','w')
 f.write("| Hastighet | Laveste observerte hastighet | Numerisk avvik | %-vis avvik |")
 f.write("\n|---|---|---|---|")
-f.close()
-f = open('tabell.txt','a')
 
 # Run tests
 
